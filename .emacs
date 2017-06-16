@@ -148,3 +148,7 @@
 ")
 
 (require 'python-yapf)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
+(add-hook 'python-mode-hook 'jedi:ac-setup)
