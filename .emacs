@@ -143,3 +143,6 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))d
+
+(add-to-list 'load-path "/home/todd/.emacs.d/")
+(require 'py-yapf)
