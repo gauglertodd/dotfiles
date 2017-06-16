@@ -4,6 +4,9 @@ import os
 names = os.listdir(".")
 names.remove('.git')
 for file in names:
-    call(['cp', '-f',  '-r', '/home/todd/' + file, "."])
+    try:
+        call(['cp', '-f',  '-r', '/home/todd/' + file, "."])
+    except:
+        print "Fail on file " + file
 
 
