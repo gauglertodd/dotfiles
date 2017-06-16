@@ -1,6 +1,6 @@
 from subprocess import call
 import os
-import pdb; pdb.set_trace()
+
 names = os.listdir(".")
 names.remove('.git')
 names.remove('copyscript.py')
