@@ -127,6 +127,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export PATH=/usr/bin/python:/usr/local/bin:$PATH
 
-# this is sourcing the bashprompt script to include gitbranch names/env names
+#  this is sourcing the bashprompt script to include gitbranch names/env names
 . ~/.bash_prompt.sh
 . ~/.tmux_wrapper.sh
