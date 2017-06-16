@@ -149,6 +149,17 @@
 
 (require 'python-yapf)
 
+;; (add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys nil)
+(setq jedi:tooltip-method nil)
+(autoload 'jedi:setup "jedi" nil t)
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)                 ; optional
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+
+;; redefine jedi's C-. (jedi:goto-definition)
+;; to remember position, and set C-, to jump back
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
+             (local-set-key (kbd "C-,") 'jedi:jump-back)
+             (local-set-key (kbd "C-c d") 'jedi:show-doc)
+             (local-set-key (kbd "C-<tab>") 'jedi:complete)))
