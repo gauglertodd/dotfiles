@@ -145,12 +145,12 @@
 
 (add-to-list 'load-path "/home/todd/.emacs.d/")
 
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (local-set-key (kbd "C-.") 'jedi:goto-definition)
-             (local-set-key (kbd "C-,") 'jedi:jump-back)
-             (local-set-key (kbd "C-c d") 'jedi:show-doc)
-             (local-set-key (kbd "C-<tab>") 'jedi:complete)))
+;; (add-hook 'python-mode-hook
+;;           '(lambda ()
+;;              (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
+;;              (local-set-key (kbd "C-,") 'jedi:jump-back)
+;;              (local-set-key (kbd "C-c d") 'jedi:show-doc)
+;;              (local-set-key (kbd "C-<tab>") 'jedi:complete)))
 
 (add-hook 'python-mode-hook 'jedi:setup)
 ;;enable jedi autocompletion in python
