@@ -46,7 +46,7 @@
   (scroll-up increment) (sit-for 0.05)
   (scroll-up increment) (sit-for 0.02)
   (scroll-up increment) (sit-for 0.02)
-  (scroll-up increment) (sit-for 0.05)
+  (scroll-up increment) (sit-for 0.05)AAAA
   (scroll-up increment) (sit-for 0.06)
   (scroll-up increment))
 (global-set-key [(mouse-5)] '(lambda () (interactive) (smooth-scroll 1)))
@@ -130,3 +130,10 @@
               "~/.emacs.d/plugins/yasnippet")
 	      (require 'yasnippet)
 	      (yas-global-mode 1)
+
+(with-eval-after-load 'yasnippet
+(setq yas-snippet-dirs (remq 'yas-installed-snippets-dir yas-snippet-dirs)))
+
+
+
+
