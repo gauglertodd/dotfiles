@@ -137,4 +137,6 @@
 (setq x-select-enable-clipboard t)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(require 'key-chord)
 (key-chord-define-global "JJ" 'switch-to-previous-buffer)
