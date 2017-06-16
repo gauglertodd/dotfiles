@@ -161,3 +161,6 @@
 ;;              (local-set-key (kbd "C-<tab>") 'jedi:complete)))
 
 (add-hook 'python-mode-hook 'jedi:setup)
+;;enable jedi autocompletion in python
+(add-hook 'python-mode-hook 'auto-complete-mode)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
