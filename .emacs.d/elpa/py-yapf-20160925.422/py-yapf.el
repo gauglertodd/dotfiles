@@ -113,7 +113,7 @@ Note that `--in-place' is used by default."
                                            executable-call
                                            only-on-region
                                            file-extension
-                                           ignore-return-code)
+                                           )
   "Formats the current buffer according to the executable"
   (when (not (executable-find executable-name))
     (error (format "%s command not found." executable-name)))
