@@ -134,6 +134,4 @@
 (with-eval-after-load 'yasnippet
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
 
-
-
-
+(setq x-select-enable-clipboard t)
