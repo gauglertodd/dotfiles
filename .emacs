@@ -135,3 +135,6 @@
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
 
 (setq x-select-enable-clipboard t)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(key-chord-define-global "JJ" 'switch-to-previous-buffer)
