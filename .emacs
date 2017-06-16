@@ -140,3 +140,6 @@
 
 (require 'key-chord)
 (key-chord-define-global "JJ" 'switch-to-previous-buffer)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))d
