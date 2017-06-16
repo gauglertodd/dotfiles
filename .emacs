@@ -91,7 +91,7 @@
      (global-set-key [f4] 'flymake-goto-next-error)
 
 ;; Set the number to the number of columns to use.
-(setq-default fill-column 79)
+(setq-default fill-column 100)
 
 ;; Add Autofill mode to mode hooks.
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
