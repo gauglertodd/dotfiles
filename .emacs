@@ -39,9 +39,9 @@
 
 ;;; -------------------------------------------------------------- Smooth-Scroll
 (defun smooth-scroll (increment)
- ;; scroll smoothly by intercepting the mouse wheel and 
+ ;; scroll smoothly by intercepting the mouse wheel and
  ;; turning its signal into a signal which
- ;; moves the window one line at a time, and waits for 
+ ;; moves the window one line at a time, and waits for
  ;; a period of time between each move
   (scroll-up increment) (sit-for 0.05)
   (scroll-up increment) (sit-for 0.02)
@@ -131,34 +131,26 @@
 	      (require 'yasnippet)
 	      (yas-global-mode 1)
 
-(with-eval-after-load 'yasnippet
+(with-eval-after-load 'yasnippet)
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
 
-(setq x-select-enable-clipboard t)n
+(setq x-select-enable-clipboard t)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(require 'key-chord)
-(key-chord-define-global "JJ" 'switch-to-previous-buffer)
+;(key-chord-define-global "JJ" 'switch-to-previous-buffer)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))d
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
-(add-to-list 'load-path "/home/todd/.emacs.d/
-")
+(add-to-list 'load-path "/home/todd/.emacs.d/")
 
-(require 'python-yapf)
-
-;; (add-hook 'python-mode-hook 'jedi:setup)
-
-;; redefine jedi's C-. (jedi:goto-definition)
-;; ;; to remember position, and set C-, to jump back
-;;   (add-hook 'python-mode-hook
-;;           '(lambda ()
-;;              (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
-;;              (local-set-key (kbd "C-,") 'jedi:jump-back)
-;;              (local-set-key (kbd "C-c d") 'jedi:show-doc)
-;;              (local-set-key (kbd "C-<tab>") 'jedi:complete)))
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-.") 'jedi:goto-definition)
+             (local-set-key (kbd "C-,") 'jedi:jump-back)
+             (local-set-key (kbd "C-c d") 'jedi:show-doc)
+             (local-set-key (kbd "C-<tab>") 'jedi:complete)))
 
 (add-hook 'python-mode-hook 'jedi:setup)
 ;;enable jedi autocompletion in python
