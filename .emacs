@@ -66,7 +66,7 @@
  '(custom-enabled-themes (quote (wombat)))
  '(package-selected-packages
    (quote
-    (js-auto-beautify js-format projectile jedi package-lint yasnippet yapfify py-yapf)))
+    (magit format-sql js-auto-beautify js-format projectile jedi package-lint yasnippet yapfify py-yapf)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -162,6 +162,14 @@ For more information, see the function `buffer-menu'."
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
+
+; an alternative way to adding melpa packages, from
+; https://magit.vc/manual/magit/Installing-from-an-Elpa-Archive.html#Installing-from-an-Elpa-Archive
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
 (add-to-list 'load-path "/home/todd/.emacs.d/elpa")
 
 (defvar jedi:goto-stack '())
@@ -244,3 +252,19 @@ For more information, see the function `buffer-menu'."
 
 (eval-after-load 'css-mode
   '(define-key css-mode-map (kbd "<f5>") 'web-beautify-css))
+
+(defun point-in-comment ()
+  (let ((syn (syntax-ppss)))
+    (and (nth 8 syn)
+         (not (nth 3 syn)))))
+
+(defun capitalize-all-mysql-keywords ()
+  (interactive)
+  (require 'sql)
+  (save-excursion
+    (dolist (keywords sql-mode-mysql-font-lock-keywords)
+      (goto-char (point-min))
+      (while (re-search-forward (car keywords) nil t)
+        (unless (point-in-comment)
+          (goto-char (match-beginning 0))
+          (upcase-word 1))))))
