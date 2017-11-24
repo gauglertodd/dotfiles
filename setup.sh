@@ -2,8 +2,8 @@
 
 # need pip/git/curl
 sudo apt install -y python-pip
-sudo apt install -y git 
-sudo apt install -y curl 
+sudo apt install -y git
+sudo apt install -y curl
 
 # i only slightly care about vim
 sudo apt install -y vim
@@ -42,11 +42,14 @@ cd ~/Desktop
 mkdir temp && cd temp
 git clone https://github.com/gauglertodd/dotfiles
 echo "Moving dotfiles around"
-cp -r dotfiles/ ~/
+cd dotfiles && cp -r . ~/
 
 # general pip installs for python stuff
 echo "General pip installs for python development"
-pip install yapf
+sudo pip install yapf
+sudo pip install jedi
+sudo pip install pep8
+sudo pip install pyflakes
 
 # make all the magic happen.
 source ~/.bashrc

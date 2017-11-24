@@ -118,14 +118,14 @@ fi
 
 # --------------  non-default stuff ---------------
 
-# this is for virtualenvwrapper 
+# this is for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
-# this is additional stuff, departing from the standard virtualenvwrapper install. 
+# this is additional stuff, departing from the standard virtualenvwrapper install.
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export PATH=/usr/bin/python:/usr/local/bin:$PATH
+export PATH=/usr/bin/python:/usr/local/bin:~/.emacs.d/:$PATH
 
 # this is sourcing the bashprompt script to include gitbranch names/env names
 . ~/.bash_prompt.sh
