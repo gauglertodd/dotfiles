@@ -9,6 +9,7 @@ sudo apt install -y curl
 sudo apt install -y vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
 
 # installing virtualenv/wrapper
 echo "Installing virtualenv"
