@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# check for pip: 
+# need pip/git/curl
 sudo apt install -y python-pip
 sudo apt install -y git 
+sudo apt install -y curl 
+
+# i only slightly care about vim
 sudo apt install -y vim
 
 # installing virtualenv/wrapper
@@ -19,7 +22,7 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 
 # installing pgadmin
-echo "Installing pgadmin"p
+echo "Installing pgadmin"
 sudo apt-get install -y postgresql-9.3
 sudo apt-get install -y pgadmin3
 
@@ -35,6 +38,7 @@ cd ~/Desktop
 mkdir temp && cd temp
 git clone https://github.com/gauglertodd/dotfiles
 echo "Moving dotfiles around"
+cp -r dotfiles/ ~/
 
 # general pip installs for python stuff
 echo "General pip installs for python development"
