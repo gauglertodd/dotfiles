@@ -7,6 +7,8 @@ sudo apt install -y curl
 
 # i only slightly care about vim
 sudo apt install -y vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # installing virtualenv/wrapper
 echo "Installing virtualenv"
@@ -31,6 +33,7 @@ echo "Installing Emacs"
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update
 sudo apt-get install -y emacs25
+emacs --script dotfiles/.emacs.d/install.el
 
 # pulling/moving dotfiles locally
 echo "Making temp dir, pulling dotfiles from git"

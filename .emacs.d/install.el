@@ -1,4 +1,4 @@
-;; run with emasc --script install.el
+;; run with emacs --script install.el
 (require 'package)
 
 ; find package information from following archives
@@ -20,7 +20,6 @@
           concurrent
           ctable
           dash
-          defferred
           epc
           epl
           format-sql
@@ -34,12 +33,11 @@
           magit-popup
           pkg-info
           popup
-          projectil
+          projectile
           py-yapf
           python-environment
           web-beautify
           web-mode
           with-editor
           yapfify
-          yasnipped
           color-theme))
