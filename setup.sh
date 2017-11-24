@@ -3,11 +3,12 @@
 # check for pip: 
 sudo apt install -y python-pip
 sudo apt install -y git 
+sudo apt install -y vim
 
 # installing virtualenv/wrapper
 echo "Installing virtualenv"
-pip install virtualenv
-pip install virtualenvwrapper
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
 
 # installing docker
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
