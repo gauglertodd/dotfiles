@@ -81,3 +81,9 @@ gsettings set \
 gsettings set \
           org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ \
           foreground-color "#28ee28"
+
+# map capslock to control
+setxkbmap -option caps:ctrl_modifier
+
+# setting up the windows-like snap settings
+sudo apt install compizconfig-settings-manager
