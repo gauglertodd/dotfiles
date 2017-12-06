@@ -89,6 +89,7 @@ setxkbmap -option caps:ctrl_modifier
 sudo apt install compizconfig-settings-manager
 
 # setting up dropbox/texworks
+sudo apt-get install -y texmaker
 sudo add-apt-repository ppa:texworks/stable
 sudo apt-get update
 sudo apt-get install -y texworks
