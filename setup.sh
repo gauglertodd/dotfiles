@@ -87,3 +87,10 @@ setxkbmap -option caps:ctrl_modifier
 
 # setting up the windows-like snap settings
 sudo apt install compizconfig-settings-manager
+
+# setting up dropbox/texworks
+sudo add-apt-repository ppa:texworks/stable
+sudo apt-get update
+sudo apt-get install -y texworks
+ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
