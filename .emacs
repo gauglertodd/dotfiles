@@ -253,6 +253,9 @@ For more information, see the function `buffer-menu'."
 (eval-after-load 'css-mode
   '(define-key css-mode-map (kbd "<f5>") 'web-beautify-css))
 
+(eval-after-load 'latex
+  '(define-key LaTeX-mode-map (kbd "<f5>") 'LaTeX-fill-buffer))
+
 (defun point-in-comment ()
   (let ((syn (syntax-ppss)))
     (and (nth 8 syn)

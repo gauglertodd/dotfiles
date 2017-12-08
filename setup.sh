@@ -56,6 +56,11 @@ sudo pip install jedi
 sudo pip install pep8
 sudo pip install pyflakes
 
+# general installs for js-beautify 
+sudo apt-get install -y npm 
+sudo npm -g install js-beautify
+sudo apt-get install -y nodejs-legacy
+
 # make all the magic happen.
 source ~/.bashrc
 
