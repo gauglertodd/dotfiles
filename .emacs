@@ -271,3 +271,6 @@ For more information, see the function `buffer-menu'."
         (unless (point-in-comment)
           (goto-char (match-beginning 0))
           (upcase-word 1))))))
+
+(latex-preview-pane-enable)
+
