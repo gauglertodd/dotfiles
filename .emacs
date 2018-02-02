@@ -66,7 +66,7 @@
  '(custom-enabled-themes (quote (wombat)))
  '(package-selected-packages
    (quote
-    (magit format-sql js-auto-beautify js-format projectile jedi package-lint yasnippet yapfify py-yapf)))
+    (sphinx-doc magit format-sql js-auto-beautify js-format projectile jedi package-lint yasnippet yapfify py-yapf)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -272,5 +272,15 @@ For more information, see the function `buffer-menu'."
           (goto-char (match-beginning 0))
           (upcase-word 1))))))
 
+;; Adding sphinx-friendly docstrings to python documents
+(add-hook 'python-mode-hook (lambda ()
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))
+(put 'upcase-region 'disabled nil)
+
+;; launching emacs with ubuntu unity/osx sometimes has issues with flymake
+(setq exec-path (append exec-path '("~/.emacs.d/plugins")))
+
+;; for the latex workflow 
 (latex-preview-pane-enable)
 
