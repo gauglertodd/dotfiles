@@ -40,4 +40,6 @@
           web-mode
           with-editor
           yapfify
-          color-theme))
+          color-theme
+          ess
+          sphinx-doc))
