@@ -281,6 +281,20 @@ For more information, see the function `buffer-menu'."
 ;; launching emacs with ubuntu unity/osx sometimes has issues with flymake
 (setq exec-path (append exec-path '("~/.emacs.d/plugins")))
 
-;; for the latex workflow 
+;; for my latex workflow 
 (latex-preview-pane-enable)
+
+(setq mac-option-key-is-meta nil)
+    (setq mac-command-key-is-meta t)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier nil)
+;; (add-to-list 'load-path "~/.emacs.d/elpa")
+
+(when (and (memq window-system '(mac ns))
+           (require 'exec-path-from-shell nil t))
+  ;; (setq exec-path-from-shell-debug t)
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-envs '("PATH"))
+  (message "Initialized PATH and other variables from SHELL."))
+
 
