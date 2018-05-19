@@ -30,7 +30,8 @@ echo "Making temp dir, pulling dotfiles from git"
 cd ~/
 mkdir dotfiles && cd temp
 git clone https://github.com/gauglertodd/dotfiles
-echo "Moving dotfiles around"
+echo "Symlinking dotfiles, fingers crossed"
+ln -sfn ~/dotfiles/* ~/
 
 # general installs for js-beautify
 sudo apt-get install -y npm
