@@ -8,11 +8,6 @@ sudo apt install -y python-pip
 sudo apt install -y git
 sudo apt install -y curl
 
-# i only slightly care about vim
-brew install vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-
 # installing virtualenv/wrapper
 echo "Installing virtualenv"
 pip install virtualenv
@@ -29,14 +24,14 @@ sudo pip install pyflakes
 echo "Making temp dir, pulling dotfiles from git"
 cd ~/
 mkdir dotfiles && cd temp
-git clone https://github.com/gauglertodd/dotfiles
+git clone -b osx https://github.com/gauglertodd/dotfiles
 echo "Symlinking dotfiles, fingers crossed"
 ln -sfn ~/dotfiles/* ~/
 
-# general installs for js-beautify
-sudo apt-get install -y npm
-sudo npm -g install js-beautify
-sudo apt-get install -y nodejs-legacy
+# i only slightly care about vim
+brew install vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # make all the magic happen.
 source ~/.bashrc
