@@ -3,11 +3,6 @@
 # we gonna need brew up in this
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# need pip/git/curl
-sudo apt install -y python-pip
-sudo apt install -y git
-sudo apt install -y curl
-
 # installing virtualenv/wrapper
 echo "Installing virtualenv"
 pip install virtualenv
@@ -15,10 +10,10 @@ pip install virtualenvwrapper
 
 # general pip installs for python stuff
 echo "General pip installs for python development"
-sudo pip install yapf
-sudo pip install jedi
-sudo pip install pep8
-sudo pip install pyflakes
+pip install yapf
+pip install jedi
+pip install pep8
+pip install pyflakes
 
 # pulling/moving dotfiles locally
 echo "Making temp dir, pulling dotfiles from git"
