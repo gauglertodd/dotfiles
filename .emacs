@@ -64,7 +64,7 @@
  '(fancy-splash-image "~/Desktop/lol.jpg")
  '(package-selected-packages
    (quote
-    (sphinx-doc ess latex-preview-pane exec-path-from-shell js-auto-beautify projectile jedi package-lint yasnippet yapfify py-yapf)))
+    (clang-format sphinx-doc ess latex-preview-pane exec-path-from-shell js-auto-beautify projectile jedi package-lint yasnippet yapfify py-yapf)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -217,8 +217,13 @@ For more information, see the function `buffer-menu'."
 (tool-bar-mode -1)
 
 ; allowing for projectile globally.
-(projectile-global-mode)
+;; (projectile-global-mode)
 (require 'cl-lib)
+
+;; getting some clang autoformatting
+(require 'clang-format)
+(setq clang-format-style-option "google")
+
 
 ;; global auto-revert mode.
 (global-auto-revert-mode 1)
@@ -231,8 +236,11 @@ For more information, see the function `buffer-menu'."
 (eval-after-load 'js
   '(define-key js-mode-map (kbd "<f5>") 'web-beautify-js))
 
+(eval-after-load 'cc-mode
+  '(define-key c-mode-map  (kbd "<f5>") 'clang-format-buffer))
+
 (eval-after-load 'json-mode
-  '(define-key json-mode-map (kbd "<f5>") 'web-beautify-js))
+  '(define-key  json-mode-map (kbd "<f5>") 'web-beautify-js))
 
 (eval-after-load 'sgml-mode
   '(define-key html-mode-map (kbd "<f5>") 'web-beautify-html))
@@ -253,29 +261,14 @@ For more information, see the function `buffer-menu'."
     (setq mac-command-key-is-meta t)
     (setq mac-command-modifier 'meta)
     (setq mac-option-modifier nil)
-;; (add-to-list 'load-path "~/.emacs.d/elpa")
 
 (when (and (memq window-system '(mac ns))
            (require 'exec-path-from-shell nil t))
-  ;; (setq exec-path-from-shell-debug t)
+  (setq exec-path-from-shell-debug t)
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs '("PATH"))
   (message "Initialized PATH and other variables from SHELL."))
 
-
-;; (with-eval-after-load 'python
-;;   (defun python-shell-completion-native-try ()
-;;     "Return non-nil if can trigger native completion."
-;;     (let ((python-shell-completion-native-enable t)
-;;           (python-shell-completion-native-output-timeout
-;;            python-shell-completion-native-try-output-timeout))
-;;       (python-shell-completion-native-get-completions
-;;        (get-buffer-process (current-buffer))
-;;        nil "_"))))
-
 (add-hook 'python-mode-hook (lambda ()
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
-
-;; OSX doesn't play nice.
-;; (setq python-shell-interpreter "/usr/local/bin/python")

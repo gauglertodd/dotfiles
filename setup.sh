@@ -29,5 +29,8 @@ brew install vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
+# clang formatter
+brew install clang-format
+
 # make all the magic happen.
 source ~/.bashrc

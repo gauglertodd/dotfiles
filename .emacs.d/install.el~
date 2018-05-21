@@ -42,6 +42,4 @@
           yapfify
           color-theme
           ess
-          sphinx-doc
-          exec-path-from-shell-initialize,
-          clang-format))
+          sphinx-doc))
