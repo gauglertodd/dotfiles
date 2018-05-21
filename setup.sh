@@ -21,7 +21,8 @@ cd ~/
 mkdir dotfiles && cd temp
 git clone -b osx https://github.com/gauglertodd/dotfiles
 echo "Symlinking dotfiles, fingers crossed"
-ln -sfn ~/dotfiles/* ~/
+ln -sfn ~/dotfiles/dotfiles/.* ~/
+ln -sf ~/dotfiles/dotfiles/.emacs.d/* ~/.emacs.d/
 
 # i only slightly care about vim
 brew install vim

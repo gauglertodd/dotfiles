@@ -42,4 +42,5 @@
           yapfify
           color-theme
           ess
-          sphinx-doc))
+          sphinx-doc
+          exec-path-from-shell-initialize))
