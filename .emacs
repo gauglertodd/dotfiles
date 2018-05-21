@@ -26,9 +26,6 @@
 (global-set-key (kbd "C-+") 'text-scale-adjust)
 (global-set-key (kbd "C--") 'text-scale-adjust)
 (global-set-key (kbd "C-0") 'text-scale-adjust)
-(global-set-key [(super l)] 'save-all)            ; save-all, (super s) not work
-(global-set-key [(super z)] 'undo)                ; undo. Press C-r to make redo
-(global-set-key [(super x)] 'kill-region)         ; cut
 (global-set-key [(super c)] 'copy-region-as-kill) ; copy
 (global-set-key [(super v)] 'yank)                ; paste
 ;; (global-set-key (kbd "M-v") 'yank-pop)            ; paste previous
@@ -64,9 +61,10 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(custom-enabled-themes (quote (wombat)))
+ '(fancy-splash-image "~/Desktop/lol.jpg")
  '(package-selected-packages
    (quote
-    (sphinx-doc magit format-sql js-auto-beautify js-format projectile jedi package-lint yasnippet yapfify py-yapf)))
+    (sphinx-doc ess latex-preview-pane exec-path-from-shell js-auto-beautify projectile jedi package-lint yasnippet yapfify py-yapf)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -92,6 +90,7 @@
 The list is displayed in a buffer named `*Buffer List*'.
 Note that buffers with names starting with spaces are omitted.
 Non-null optional arg FILES-ONLY means mention only file buffers.
+
 For more information, see the function `buffer-menu'."
   (interactive "P")
   (switch-to-buffer (list-buffers-noselect files-only)))
@@ -162,14 +161,6 @@ For more information, see the function `buffer-menu'."
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-
-
-; an alternative way to adding melpa packages, from
-; https://magit.vc/manual/magit/Installing-from-an-Elpa-Archive.html#Installing-from-an-Elpa-Archive
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-
 (add-to-list 'load-path "/home/todd/.emacs.d/elpa")
 
 (defvar jedi:goto-stack '())
@@ -206,16 +197,15 @@ For more information, see the function `buffer-menu'."
 (global-set-key (kbd "<f5>") 'yapfify-buffer)
 (global-set-key (kbd "<f1>") 'new-frame)
 
-
 ;; adding some project-level searching.
-(global-set-key (kbd "C-S-F") 'projectile-grep)
+;; (global-set-key (kbd "C-F") 'projectile-grep)
 
 ;; adding quick frame navigation
 (defun prev-window ()
    (interactive)
    (other-frame -1))
 
-(define-key global-map (kbd "C-x p") 'prev-window)
+ (define-key global-map (kbd "C-x p") 'prev-window)
 (global-set-key [M-right] 'other-frame )
 (global-set-key [M-left] 'prev-window)
 
@@ -227,62 +217,12 @@ For more information, see the function `buffer-menu'."
 (tool-bar-mode -1)
 
 ; allowing for projectile globally.
-(projectile-global-mode)
-(require 'cl-lib)
+;; (projectile-global-mode)
+;; (require 'cl-
 
-;; global auto-revert mode.
-(global-auto-revert-mode 1)
+;; for latex stuff:
+;; (setenv "PATH" "/Users/newuser/.emacs.d/elpa:/usr/local/bin:/Library/TeX/texbin/:$PATH" t)
 
-;; for web formatting
-(require 'web-beautify) ;; Not necessary if using ELPA package
-(eval-after-load 'js2-mode
-  '(define-key js2-mode-map (kbd "<f5>") 'web-beautify-js))
-;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
-(eval-after-load 'js
-  '(define-key js-mode-map (kbd "<f5>") 'web-beautify-js))
-
-(eval-after-load 'json-mode
-  '(define-key json-mode-map (kbd "<f5>") 'web-beautify-js))
-
-(eval-after-load 'sgml-mode
-  '(define-key html-mode-map (kbd "<f5>") 'web-beautify-html))
-
-(eval-after-load 'web-mode
-  '(define-key web-mode-map (kbd "<f5>") 'web-beautify-html))
-
-(eval-after-load 'css-mode
-  '(define-key css-mode-map (kbd "<f5>") 'web-beautify-css))
-
-(eval-after-load 'latex
-  '(define-key LaTeX-mode-map (kbd "<f5>") 'LaTeX-fill-buffer))
-
-(defun point-in-comment ()
-  (let ((syn (syntax-ppss)))
-    (and (nth 8 syn)
-         (not (nth 3 syn)))))
-
-(defun capitalize-all-mysql-keywords ()
-  (interactive)
-  (require 'sql)
-  (save-excursion
-    (dolist (keywords sql-mode-mysql-font-lock-keywords)
-      (goto-char (point-min))
-      (while (re-search-forward (car keywords) nil t)
-        (unless (point-in-comment)
-          (goto-char (match-beginning 0))
-          (upcase-word 1))))))
-
-;; Adding sphinx-friendly docstrings to python documents
-(add-hook 'python-mode-hook (lambda ()
-                              (require 'sphinx-doc)
-                              (sphinx-doc-mode t)))
-(put 'upcase-region 'disabled nil)
-
-;; launching emacs with ubuntu unity/osx sometimes has issues with flymake
-(setq exec-path (append exec-path '("~/.emacs.d/plugins")))
-
-;; for my latex workflow 
-(latex-preview-pane-enable)
 
 (setq mac-option-key-is-meta nil)
     (setq mac-command-key-is-meta t)
@@ -298,3 +238,19 @@ For more information, see the function `buffer-menu'."
   (message "Initialized PATH and other variables from SHELL."))
 
 
+;; (with-eval-after-load 'python
+;;   (defun python-shell-completion-native-try ()
+;;     "Return non-nil if can trigger native completion."
+;;     (let ((python-shell-completion-native-enable t)
+;;           (python-shell-completion-native-output-timeout
+;;            python-shell-completion-native-try-output-timeout))
+;;       (python-shell-completion-native-get-completions
+;;        (get-buffer-process (current-buffer))
+;;        nil "_"))))
+
+(add-hook 'python-mode-hook (lambda ()
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))
+
+;; OSX doesn't play nice.
+;; (setq python-shell-interpreter "/usr/local/bin/python")
