@@ -217,12 +217,37 @@ For more information, see the function `buffer-menu'."
 (tool-bar-mode -1)
 
 ; allowing for projectile globally.
-;; (projectile-global-mode)
-;; (require 'cl-
+(projectile-global-mode)
+(require 'cl-lib)
 
-;; for latex stuff:
-;; (setenv "PATH" "/Users/newuser/.emacs.d/elpa:/usr/local/bin:/Library/TeX/texbin/:$PATH" t)
+;; global auto-revert mode.
+(global-auto-revert-mode 1)
 
+;; for web formatting
+(require 'web-beautify) ;; Not necessary if using ELPA package
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "<f5>") 'web-beautify-js))
+;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
+(eval-after-load 'js
+  '(define-key js-mode-map (kbd "<f5>") 'web-beautify-js))
+
+(eval-after-load 'json-mode
+  '(define-key json-mode-map (kbd "<f5>") 'web-beautify-js))
+
+(eval-after-load 'sgml-mode
+  '(define-key html-mode-map (kbd "<f5>") 'web-beautify-html))
+
+(eval-after-load 'web-mode
+  '(define-key web-mode-map (kbd "<f5>") 'web-beautify-html))
+
+(eval-after-load 'css-mode
+  '(define-key css-mode-map (kbd "<f5>") 'web-beautify-css))
+
+(eval-after-load 'latex
+  '(define-key LaTeX-mode-map (kbd "<f5>") 'LaTeX-fill-buffer))
+
+;; I like to load preview-pane automatically
+(latex-preview-pane-enable)
 
 (setq mac-option-key-is-meta nil)
     (setq mac-command-key-is-meta t)
