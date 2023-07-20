@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: mlpirate
+# key: mlpirate
+# --
+
+# Focus Area: Problem Navigation
+## Navigates issues in the development space
+## Focuses on important problem areas and guides parts of the interview*
+## Organizes, structures, and/or analyzes the problem space*
+
+# Focus Area: Training Data
+## Considers how to acquire and label the data as appropriate
+## Chooses and justifies appropriate data solutions for the given task
+## Provides implementation details for the collection of training data
+
+# Focus Area: Feature Engineering
+## Identifies a comprehensive set of implementable and problem-appropriate features
+## Organizes, structures, and prioritizes the signals
+## Considers the end-to-end use of features in the modeling solution
+
+# Focus Area: Modeling
+## Demonstrates familiarity with relevant modeling techniques
+## Discusses technical implementation details
+## Identifies root causes and solves issues with model training
+
+# Focus Area: Evaluation & Deployment
+## Considers the deployment and evaluation strategy

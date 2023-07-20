@@ -1,0 +1,8 @@
+/sshx:localhost#10022:/home/gauglertodd/fbsource/fbcode/dataswarm-pipelines/tasks/groups/integrity/online_metrics/user_level/groups_integrity_user_hoax_vpvs.py
+/var/folders/66/lyzmqx3n6jb21q6737ycsd3m0000gn/T/#!sshx:localhost#10022:!home!gauglertodd!fbsource!fbcode!dataswarm-pipelines!tasks!groups!integrity!online_metrics!user_level!groups_integrity_user_hoax_vpvs.py#
+/sshx:localhost#10022:/home/gauglertodd/fbsource/fbcode/f6/datasets/integrity/misinformation/superset.py
+/var/folders/66/lyzmqx3n6jb21q6737ycsd3m0000gn/T/#!sshx:localhost#10022:!home!gauglertodd!fbsource!fbcode!f6!datasets!integrity!misinformation!superset.py#
+/sshx:localhost#10022:/home/gauglertodd/fbsource/fbcode/f6/pipelines/misinformation/features/native_features.py
+/var/folders/66/lyzmqx3n6jb21q6737ycsd3m0000gn/T/#!sshx:localhost#10022:!home!gauglertodd!fbsource!fbcode!f6!pipelines!misinformation!features!native_features.py#
+/sshx:localhost#10022:/home/gauglertodd/fbsource/fbcode/f6/pipelines/misinformation/prediction_ensemble.py
+/var/folders/66/lyzmqx3n6jb21q6737ycsd3m0000gn/T/#!sshx:localhost#10022:!home!gauglertodd!fbsource!fbcode!f6!pipelines!misinformation!prediction_ensemble.py#

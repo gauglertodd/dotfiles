@@ -1,0 +1,160 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("dataswarm pipelines for ECG"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/dataswarm-pipelines/tasks/groups/eau/modeling/")
+ (front-context-string . "model_calibratio")
+ (rear-context-string . "33 Apr 13 06:21 ")
+ (position . 301))
+("ecg xcontrollers"
+ (filename . "/sshx:od:/home/gauglertodd/www/flib/intern/site/x/eau/")
+ (front-context-string . "IntegrityHarmDat")
+ (rear-context-string . "56 Feb  9 01:40 ")
+ (position . 287))
+("ecg react tools"
+ (filename . "/sshx:od:/home/gauglertodd/www/html/intern/js/eau_config_generator/")
+ (front-context-string . "EauConfigGenerat")
+ (rear-context-string . "86 Jan 30 11:27 ")
+ (position . 882))
+("interesting example of publishing feature groups"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/groups/eau_non_rec/groups_logging_feature_group.py")
+ (front-context-string . "g\",\n    model_ty")
+ (rear-context-string . "e_feature_loggin")
+ (position . 3321))
+("UploadHiveFeatureGroupWorkflow"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/workflows/online/upload_hive_feature_group.py")
+ (front-context-string . "\n    # pyre-fixm")
+ (rear-context-string . "RecurringPeriod,")
+ (position . 6381))
+("ecg hack tools"
+ (filename . "/sshx:od:/home/gauglertodd/www/flib/intern/site/x/eau/")
+ (front-context-string . "IntegrityHarmDat")
+ (rear-context-string . "56 Dec 22 03:40 ")
+ (position . 282))
+("ecg"
+ (filename . "/sshx:od:/home/gauglertodd/www/html/intern/js/eau_config_generator/")
+ (front-context-string . "ConfigGenerator.")
+ (rear-context-string . "22 Jan 21 05:28 ")
+ (position . 296))
+("generalized_domain_builder"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/integrity/entity_actor_understanding/")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("dper3 mtml example"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/careml/ci_borderline/hostile_speech/bhs_mtml_keeper.py")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("eau_config_features"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/feature_groups/integrity/entity_actor_understanding/eau_config_features.py")
+ (front-context-string . "\n\n\ndef get_f2_ty")
+ (rear-context-string . "hql)}])\"\"\"\n    )")
+ (position . 891))
+("user live fluent2 model"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/groups/cert_models/user_models/train_user_risk_for_live.py")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("live model features"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/groups/cert_models/table_schema/configurable_user_features.py")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("eau f6 pipelines"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/f6/pipelines/eau_integrity/model_train.py")
+ (front-context-string . "\n    dataset[\"pr")
+ (rear-context-string . "on:\n        pass")
+ (position . 4181))
+("eau/modeling"
+ (filename . "/sshx:devf:/home/gauglertodd/configerator/source/configerator/tools/")
+ (front-context-string . "thrift_update_fi")
+ (rear-context-string . "95 Jan 31 10:29 ")
+ (position . 3086))
+("f6 multitask faim mode"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/f6/pipelines/dc/amd_mtl.py")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("shared non_rec model code"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/dc/amd/dc_actor_non_rec_groups.py")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("expression runner modules"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/f6/runtime/expression_runner_modules.py")
+ (front-context-string . "#!/usr/bin/env p")
+ (rear-context-string)
+ (position . 1))
+("eau modeling configs"
+ (filename . "/sshx:devf:/home/gauglertodd/configerator/source/eau/modeling/")
+ (front-context-string)
+ (rear-context-string . " 0 Jan 11 08:41 ")
+ (position . 274))
+("eau f6 datasets"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/f6/datasets/integrity/eau/")
+ (front-context-string . "common.py\n  -rw-")
+ (rear-context-string . "31 Dec 13 12:49 ")
+ (position . 299))
+("f6 logging examples"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/f6/pipelines/automl/pipeline.py")
+ (front-context-string . "    )\n\n    # TOD")
+ (rear-context-string . "ource_override,\n")
+ (position . 5671))
+("great f6 xgboost example"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/f6/pipelines/misinformation/prediction_ensemble.py")
+ (front-context-string . "        num_boos")
+ (rear-context-string . ".4121596770288,\n")
+ (position . 7053))
+("eau_cert fluent2 models"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/groups/cert_models/")
+ (front-context-string . "combine_individu")
+ (rear-context-string . "21 Dec  7 09:54 ")
+ (position . 333))
+("eau_non_rec featuregroups"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/feature_groups/groups/eau_non_rec/")
+ (front-context-string . "create_groups_fe")
+ (rear-context-string . "30 Dec  6 13:34 ")
+ (position . 339))
+("harms portal library"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/eau/harms_portal/")
+ (front-context-string . "harms_portal_bin")
+ (rear-context-string . "32 Dec  3 14:40 ")
+ (position . 291))
+("harms portal pipelines"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/dataswarm-pipelines/tasks/si/eau/harms_portal/")
+ (front-context-string . "group_admin_sign")
+ (rear-context-string . "56 Nov 16 06:51 ")
+ (position . 319))
+("eau_non_rec fluent2 models"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/fluent2/domains/groups/eau_non_rec/")
+ (front-context-string . "evaluate_non_rec")
+ (rear-context-string . "22 Sep 10 06:07 ")
+ (position . 332))
+("integrity_flow"
+ (filename . "/sshx:devf:/home/gauglertodd/fbsource/fbcode/fblearner/flow/projects/integrity/")
+ (front-context-string . "civic\n  drwxr-xr")
+ (rear-context-string . " 0 Aug 23 13:06 ")
+ (position . 295))
+("configs"
+ (filename . "~/.emacs.d/configs/")
+ (front-context-string . "autoformat_confi")
+ (rear-context-string . "32 Aug 22 17:52 ")
+ (position . 518))
+("install"
+ (filename . "~/Dropbox (Facebook)/dotfiles/install.el")
+ (front-context-string . "\n(setq package-a")
+ (rear-context-string . "quire 'package)\n")
+ (position . 20))
+("ibuffer"
+ (filename . "~/.emacs.d/configs/ibuffer_config.el")
+ (front-context-string . ";; imma try out ")
+ (rear-context-string)
+ (position . 1))
+("tramp"
+ (filename . "~/.emacs.d/configs/tramp_config.el")
+ (front-context-string . "(custom-set-vari")
+ (rear-context-string)
+ (position . 1))
+)

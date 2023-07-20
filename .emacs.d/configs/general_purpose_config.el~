@@ -1,0 +1,226 @@
+;; setting mac's option key
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
+(global-set-key (kbd "C-d") 'kill-whole-line)
+(global-set-key (kbd "M-C-f") 'find-file)
+(global-set-key (kbd "<f8>")
+		(lambda()
+		  (interactive)
+(find-file "/sshx:devf:/home/")))
+		  ;; (find-file "/sshx:localhost#10022:~/")))
+(global-set-key (kbd "C-<") 'split-window-horizontally)
+(global-set-key (kbd "C->") 'split-window-vertically)
+(global-set-key (kbd "<f1>") 'new-frame)
+(global-set-key (kbd "C-;") 'comment-or-uncomment-line-or-region)
+(global-set-key (kbd "C-+") 'text-scale-adjust)
+(global-set-key (kbd "C--") 'text-scale-adjust)
+;; (global-set-key (kbd "C-0") 'text-scale-adjust)
+(setq x-select-enable-clipboard t)
+
+(defun comment-or-uncomment-line-or-region ()
+  "Comments or uncomments the current line or region."
+  (interactive)
+  (if (region-active-p)
+      (comment-or-uncomment-region (region-beginning)
+				   (region-end))
+    (comment-or-uncomment-region (line-beginning-position)
+				 (line-end-position))))
+
+(global-set-key (kbd "<f1>") 'point-to-register)
+(global-set-key (kbd "<f2>") 'jump-to-register)
+
+;; Shift+Arrow to move between buffers
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+(defun other-window-backward ()
+  "Goto previous window"
+  (interactive)
+  (other-window -1))
+(global-set-key (kbd "\C-u") 'other-window-backward)
+
+;; smooth-scroll
+(defun smooth-scroll (increment)
+  ;; scroll smoothly by intercepting the mouse wheel and
+  ;; turning its signal into a signal which
+  ;; moves the window one line at a time, and waits for
+  ;; a period of time between each move
+  (scroll-up increment)
+  (sit-for 0.05)
+  (scroll-up increment)
+  (sit-for 0.02)
+  (scroll-up increment)
+  (sit-for 0.02)
+  (scroll-up increment)
+  (sit-for 0.05)
+  (scroll-up increment)
+  (sit-for 0.06)
+  (scroll-up increment))
+(global-set-key [(mouse-5)]
+		'(lambda ()
+		   (interactive)
+		   (smooth-scroll 1)))
+(global-set-key [(mouse-4)]
+		'(lambda ()
+		   (interactive)
+		   (smooth-scroll -1)))
+
+;; https://stackoverflow.com/questions/1231188/emacs-list-buffers-behavior
+(global-set-key (kbd "C-x C-b") 'my-list-buffers)
+(defun my-list-buffers
+    (&optional
+     files-only)
+  "Display a list of names of existing buffers.
+The list is displayed in a buffer named `*Buffer List*'.
+Note that buffers with names starting with spaces are omitted.
+Non-null optional arg FILES-ONLY means mention only file buffers.
+For more information, see the function `buffer-menu'."
+  (interactive "P")
+  (switch-to-buffer (list-buffers-noselect files-only)))
+
+;; theme related info
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(add-to-list 'custom-theme-load-path "/Users/gauglertodd/dotfiles/.emacs.d/themes")
+;; (load "~/.emacs.d/themes/color-theme-molokai" t)
+;; (load-theme 'color-theme-molokai t)
+;; (load-theme 'molokai t)
+;; (load-theme 'zenburn t)
+;; (load-theme 'gruvbox t)
+;; (load-theme 'material t)
+(load-theme 'monokai t)
+(load-theme 'todd t)
+
+;; adding quick frame navigation
+(defun prev-window ()
+  (interactive)
+  (other-frame -1))
+(global-set-key [M-right] 'other-frame )
+(global-set-key [M-left] 'prev-window)
+
+(require 'powerline)
+(powerline-default-theme)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;; show matching parenthesis
+(require 'paren)
+(set-face-background 'show-paren-match "red")
+(set-face-foreground 'show-paren-match "purple")
+(set-face-attribute 'show-paren-match nil
+		    :weight 'extra-bold)
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+;; ;; for web formatting
+;; (require 'web-beautify) ;; Not necessary if using ELPA package
+;; (eval-after-load 'js2-mode '(define-key js2-mode-map (kbd "<f5>") 'web-beautify-js))
+;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
+
+
+;; defing context-sensitive autoformatters here.
+;; (eval-after-load 'python-mode
+;;   '(define-key c-mode-map  (kbd "<f5>") 'yapfify-buffer))
+
+;; (eval-after-load "python" '(message "TODD MY BOY"))
+
+;; (eval-after-load 'python
+;;   '(define-key c-mode-map  (kbd "<f5>") 'yapfify-buffer))
+
+;; (eval-after-load "python"
+;;   '(define-key c-mode-map  (kbd "<f5>") 'yapfify-buffer))
+
+
+;; (eval-after-load 'js
+;;   '(define-key js-mode-map (kbd "<f5>") 'web-beautify-js))
+
+;; (eval-after-load 'cc-mode
+;;   '(define-key c-mode-map  (kbd "<f5>") 'clang-format-buffer))
+
+;; (eval-after-load "c++-mode"
+;;   '(define-key c-mode-map  (kbd "<f5>") 'clang-format-buffer))
+
+;; (eval-after-load 'json-mode
+;;   '(define-key  json-mode-map (kbd "<f5>") 'web-beautify-js))
+
+;; (eval-after-load 'sgml-mode
+;;   '(define-key html-mode-map (kbd "<f5>") 'web-beautify-html))
+
+;; (eval-after-load 'web-mode
+;;   '(define-key web-mode-map (kbd "<f5>") 'web-beautify-html))
+
+;; (eval-after-load 'css-mode
+;;   '(define-key css-mode-map (kbd "<f5>") 'web-beautify-css))
+
+;; (eval-after-load 'latex
+;;   '(define-key LaTeX-mode-map (kbd "<f5>") 'LaTeX-fill-buffer))
+
+(defun other-window-backward ()
+  "Goto previous window"
+  (interactive)
+  (other-window -1))
+(global-set-key (kbd "\C-u") 'other-window-backward)
+
+;; Being able to see matching parenthesis is super useful to me
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+;; (require 'popup)
+
+(when (string= system-type "darwin")
+  (setq dired-use-ls-dired nil))
+
+;; this is for the purpose of search-replace across buffers.
+(require 'wgrep)
+
+;; TARGETS files are kinda python-y
+(add-to-list 'auto-mode-alist '("\\TARGETS\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\BUCK\\'" . python-mode))
+
+;; cconf file
+(add-to-list 'auto-mode-alist '("\\.cconf\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.mcconf\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.cinc\\'" . python-mode))
+
+;; GN files are their own thing
+(add-to-list 'auto-mode-alist '("\\.gn\\'" . gn-mode))
+
+;; react code
+(add-to-list 'auto-mode-alist '("\\.react.js\\'" . rjsx-mode))
+
+;; thrift files / header files / cpp files are c++ mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.thrift\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cpp\\'" . c++-mode))
+
+;; tupperware files... sure why not
+(add-to-list 'auto-mode-alist '("\\.tw\\'" . python-mode))
+
+;; materialized json files... are json.
+(add-to-list 'auto-mode-alist '("\\.materialized_JSON\\'" . json-mode))
+
+;; auto-switch to headers/cpp files
+(global-set-key (kbd "C-x C-o") 'ff-find-other-file)
+
+(setq flycheck-emacs-lisp-load-path 'inherit)
+
+;; (set-frame-font "JetBrains Mono" nil t)
+;; (set-frame-font "Iosevka" nil t)
+;; (set-frame-font "Ubuntu Mono" nil t)
+(set-frame-font "IBM Plex Mono" nil t)
+
+;; Useful for quickly turning copy/pastes into python arrays.
+(defun arrayify (start end quote)
+  "Turn strings on newlines into a QUOTEd, comma-separated one-liner."
+  (interactive "r\nMQuote: ")
+  (let ((insertion (mapconcat (lambda (x)
+				(format "%s%s%s" quote x quote))
+			      (split-string
+			       (buffer-substring
+				start
+				end)) ", ")))
+    (delete-region start end)
+    (insert insertion)))
