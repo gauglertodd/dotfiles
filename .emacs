@@ -5,12 +5,12 @@
 ;; (package-initialize)
 (require 'use-package)
 
-;; (require 'package)
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
-;; ;; and `package-pinned-packages`. Most users will not need or want to do this.
-;; ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;; (package-initialize)
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
 
 (require 'exec-path-from-shell) ;; if not using the ELPA package
     (exec-path-from-shell-initialize)
@@ -123,7 +123,7 @@
  '(explicit-shell-file-name "/bin/bash")
  '(hh-client-www-root (expand-file-name "/ssh:s:~/www"))
  '(package-selected-packages
-   '(rmsbolt exec-path-from-shell js-format rjsx-mode phps-mode tramp projectile wgrep-ag yasnippet yapfify use-package template sphinx-doc quelpa python-black py-yapf project-explorer powerline php-mode pdf-tools monky moe-theme material-theme magit lua-mode lsp-ui latex-preview-pane json-mode js-auto-beautify jedi highlight-escap... helm-swoop helm-gtags helm-ag helm hack-mode gruvbox-theme format-sql flymake-json flymake-cursor exec-path-from-... ess cquery company-lsp color-theme clang-format android-mode ag auto-complete auctex async))
+   '(terraform-mode terraform-doc helm-core magit rmsbolt exec-path-from-shell js-format rjsx-mode phps-mode tramp projectile wgrep-ag yasnippet yapfify use-package template sphinx-doc quelpa python-black py-yapf project-explorer powerline php-mode pdf-tools monky moe-theme material-theme lua-mode lsp-ui latex-preview-pane json-mode js-auto-beautify jedi highlight-escap... helm-swoop helm-gtags helm-ag helm hack-mode gruvbox-theme format-sql flymake-json flymake-cursor exec-path-from-... ess cquery company-lsp color-theme clang-format android-mode ag auto-complete auctex async))
  '(process-connection-type t t)
  '(server-port "1492")
  '(server-use-tcp t)
